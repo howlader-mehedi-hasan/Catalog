@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight, Sparkles, CheckCircle2, TrendingUp } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 
 interface HeroSectionProps {
   onOpenContact?: () => void;
@@ -9,17 +9,17 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onOpenContact }: HeroSectionProps) {
   return (
-    <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+    <section id="home" className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden scroll-mt-24">
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none -z-10" />
       <div className="absolute top-10 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Hero Container matching mockup composition */}
-        <div className="relative rounded-[36px] sm:rounded-[48px] p-6 sm:p-10 lg:p-14 bg-gradient-to-br from-[#0c2356]/80 via-[#071430]/70 to-[#020617]/90 border border-blue-400/25 shadow-2xl shadow-blue-950/50 backdrop-blur-2xl">
+        <div className="relative rounded-[36px] sm:rounded-[48px] p-6 sm:p-10 lg:p-14 bg-gradient-to-br from-[#0c2356]/85 via-[#071430]/75 to-[#020617]/90 border border-blue-400/25 shadow-2xl shadow-blue-950/50 backdrop-blur-2xl">
           
           {/* Top-Right 3D Loop Sculpture Overlay from assets */}
-          <div className="absolute -top-12 -right-12 sm:-top-16 sm:-right-16 w-36 sm:w-56 md:w-72 lg:w-80 pointer-events-none z-20 animate-pulse transition-all duration-1000">
+          <div className="absolute -top-10 -right-10 sm:-top-16 sm:-right-16 w-36 sm:w-56 md:w-72 lg:w-80 pointer-events-none z-20 transition-all duration-1000">
             <Image
               src="/assets/sculpture-loop.png"
               alt="3D Cyber Loop"
@@ -45,7 +45,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
             {/* Left Content Column */}
             <div className="lg:col-span-7 flex flex-col items-start space-y-6">
               
-              {/* Badge */}
+              {/* Pill Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase">
                 <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
                 <span>WELCOME TO CATALOGUE IT.</span>
@@ -54,10 +54,10 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
               {/* Headline strictly matching typography & structure in mockup */}
               <div className="space-y-1 sm:space-y-2">
                 <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-                  <span className="font-editorial font-normal italic block text-slate-100">
+                  <span className="font-editorial font-normal block text-slate-100">
                     Take Your
                   </span>
-                  <span className="font-editorial font-normal italic block text-slate-100">
+                  <span className="font-editorial font-normal block text-slate-100">
                     Business From
                   </span>
                 </h1>
@@ -94,59 +94,45 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
                 </a>
               </div>
 
-              {/* Trust Indicators */}
-              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 w-full max-w-lg">
-                <div className="flex flex-col">
-                  <span className="text-xl sm:text-2xl font-black text-white">100+</span>
-                  <span className="text-[11px] sm:text-xs text-slate-400">Businesses Scaled</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-xl sm:text-2xl font-black text-cyan-400">400%</span>
-                  <span className="text-[11px] sm:text-xs text-slate-400">Avg. Growth Spike</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-xl sm:text-2xl font-black text-blue-400">100%</span>
-                  <span className="text-[11px] sm:text-xs text-slate-400">Vercel & Cloud Ready</span>
-                </div>
-              </div>
-
             </div>
 
-            {/* Right Graphic Column: Professional seated on beanbag with laptop & glowing stats */}
+            {/* Right Graphic Column: Seated Entrepreneur with Floating Badges */}
             <div className="lg:col-span-5 relative flex justify-center items-center">
               
-              {/* Outer Glow Box */}
-              <div className="relative w-full max-w-[420px] rounded-[32px] overflow-hidden bg-gradient-to-b from-[#0d1c3e] to-[#040817] border border-blue-500/30 shadow-2xl p-2 sm:p-3 group">
+              <div className="relative w-full max-w-[420px] aspect-[4/4.5] flex items-center justify-center">
                 
-                {/* Image matching the exact mockup cutout */}
-                <div className="relative w-full rounded-[24px] overflow-hidden aspect-[4/4.2] bg-[#050c1e] flex items-center justify-center">
+                {/* Center Image */}
+                <div className="relative w-full h-full rounded-[28px] overflow-hidden">
                   <Image
                     src="/assets/hero-card.png"
                     alt="Digital Entrepreneur at Work"
                     width={560}
                     height={600}
                     priority
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-center"
                   />
+                </div>
 
-                  {/* Dynamic Floating Revenue Chip */}
-                  <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-3 rounded-2xl bg-[#071330]/90 border border-blue-400/30 backdrop-blur-xl shadow-xl flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-blue-600/30 border border-blue-400/30 flex items-center justify-center text-cyan-400">
-                        <TrendingUp className="w-5 h-5" />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-xs font-bold text-white tracking-wide">Live Enterprise Pipeline</span>
-                        <span className="text-[10px] text-cyan-400 font-semibold flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                          Ready for 2026 Expansion
-                        </span>
-                      </div>
-                    </div>
-                    <span className="text-xs font-extrabold text-white px-2.5 py-1 rounded-lg bg-blue-600/50 border border-blue-400/40">
-                      Active
-                    </span>
-                  </div>
+                {/* Floating Tech Stack Badge (Apple, Figma, Framer) matching mockup */}
+                <div className="absolute -top-4 -left-6 sm:-left-8 z-30 w-36 sm:w-44 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]">
+                  <Image
+                    src="/assets/tech-stack.png"
+                    alt="Tech badges (Apple, Figma, Framer)"
+                    width={180}
+                    height={60}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+
+                {/* Floating $63,921 Live Revenue Badge matching mockup */}
+                <div className="absolute -bottom-6 -right-4 sm:-right-8 z-30 w-48 sm:w-56 drop-shadow-[0_15px_30px_rgba(0,102,255,0.4)]">
+                  <Image
+                    src="/assets/widget-revenue.png"
+                    alt="$63,921 Live Revenue Metric"
+                    width={240}
+                    height={160}
+                    className="w-full h-auto object-contain"
+                  />
                 </div>
 
               </div>

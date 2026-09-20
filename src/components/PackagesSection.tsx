@@ -67,7 +67,7 @@ export default function PackagesSection({ onSelectPackage }: PackagesSectionProp
   ];
 
   return (
-    <section id="packages" className="relative py-20 sm:py-32 bg-[#030712] overflow-hidden">
+    <section id="packages" className="relative py-20 sm:py-32 bg-[#030712] overflow-hidden scroll-mt-24">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none" />
